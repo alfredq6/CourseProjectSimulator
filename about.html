@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.0.0/showdown.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Об авторе</title>
+</head>
+<body>
+<div id="backgr" style="background: url('images/ss_5383021423afa350ef8a80053eb356aad39c27a1.1920x1080.jpg')">
+    <div style="margin-bottom: 20px; display: flex"></div>
+    <div class="header">
+        <div class="row" style="margin: 0">
+            <a href="index.html" class="offset-1 col-1">
+                <img alt height="100px" src="images/Unity_Logo.png" width="100px"/>
+            </a>
+            <div class="col-10 row">
+                <a class="nav-link col-1" href="index.html">Главная</a>
+                <a class="nav-link col-3" href="theory.html">Теоретические сведения</a>
+                <a class="nav-link col-3" href="description.html">Описание установки</a>
+                <a class="nav-link col-2" href="#">Лабораторная онлайн</a>
+                <a class="nav-link col-2" href="about.html">Об авторе</a>
+            </div>
+        </div>
+    </div>
+    <div class="content-text">
+        <div class="vertical-rect"></div>
+        <div class="container" style="margin-left: 205px">
+            <div class="text-container"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>© Калупаев М.Н. курсовой проект, Минск 2019</div>
+    </div>
+</div>
+</body>
+<script>
+    let rawFile = new XMLHttpRequest();
+    rawFile.open("GET", "resume.txt", false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status === 0)
+            {
+                let converter = new showdown.Converter();
+                let html = converter.makeHtml(rawFile.responseText);
+                $('.text-container').html(html);
+            }
+        }
+    };
+    rawFile.send(null);
+</script>
+</html>

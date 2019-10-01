@@ -30,7 +30,30 @@
     <div class="content-text">
         <div class="vertical-rect"></div>
         <div class="container" style="margin-left: 205px">
-            <div class="text-container"></div>
+            <div class="text-container">
+                <h2 class="text-title">Максим Калупаев</h2>
+                <h4 class="text-title">Образование:</h4>
+                <p>Студент 3-го курса, ФИТ БГТУ</p>
+                <p>Неоконченное высшее</p>
+                <h4 class="text-title">Характеристика</h4>
+                <p>Английский Pre\-Intermediate</p>
+                <ul>
+                    <li>Itransition course project: <a href="https://github.com/alfredq6/CrowfundingPlatformApp">CrowfundingPlatformApp</a> (private)</li>
+                    <li>BSTU course project (2nd course): <a href="https://github.com/alfredq6/GSApp-BSTU-CourseProject">GSApp</a> (private)</li>
+                    <li><a href="https://alfredq6.github.io">Github.io page</a></li>
+                </ul>
+                <p>Все курсовые проекты выложены на <a href="https://github.com/alfredq6">alfredq6</a> в приватные репозитории.</p>
+                <h4 class="text-title">Ссылки</h4>
+                <ul>
+                    <li>Телефон: +375298472054</li>
+                    <li>Skype login: alfredq6</li>
+                    <li>Email: <a href="https://alfredq6@gmail.com">alfredq6@gmail.com</a></li>
+                    <li>Telegram: <a href="https://t.me/alfredq6">@alfredq6</a></li>
+                </ul>
+                <h4 class="text-title">Контакты</h4>
+                <p class="text-title">*Предпочтительней будет связаться со мной через телеграм</p>
+                <p>Минск, Беларусь 2019</p>
+            </div>
         </div>
     </div>
     <div class="footer">
@@ -38,21 +61,4 @@
     </div>
 </div>
 </body>
-<script>
-    let rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "resume.txt", false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status === 0)
-            {
-                let converter = new showdown.Converter();
-                let html = converter.makeHtml(rawFile.responseText);
-                $('.text-container').html(html);
-            }
-        }
-    };
-    rawFile.send(null);
-</script>
 </html>

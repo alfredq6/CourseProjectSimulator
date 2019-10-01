@@ -13,6 +13,9 @@ body {
     width: 20px;
     margin-left: 240px;
 }
+.text-title {
+    color: rgb(208,43,79);
+}
 .nav-link {
     font-size: 14pt;
     margin-top: 20px;

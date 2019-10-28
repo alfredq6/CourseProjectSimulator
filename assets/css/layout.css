@@ -48,3 +48,10 @@ body {
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
 }
+
+#animation_container {
+    position:relative;
+    margin:auto;
+    width: 800px;
+    height: 582px;
+}
